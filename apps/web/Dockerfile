@@ -22,7 +22,7 @@ COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 
-RUN pnpm install --frozen-lockfile  
+RUN pnpm install --frozen-lockfile
 
 # Копируем реальный код (который меняется часто)
 COPY --from=builder /app/out/full/ .
