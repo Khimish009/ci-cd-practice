@@ -1,8 +1,8 @@
 # СТАДИЯ 1: Обрезка монорепы (Prune)
 FROM node:20-alpine AS builder
 RUN apk add --no-cache libc6-compat
-# Устанавливаем turbo глобально (ту же версию, что и в проекте)
-RUN npm add -g turbo@2.8.13
+# Устанавливаем turbo глобально
+RUN npm add -g turbo@^2.8.13
 WORKDIR /app
 # Копируем ВЕСЬ монорепозиторий
 COPY . .
